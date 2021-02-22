@@ -141,4 +141,4 @@ cd Telegraph-Image-Hosting-main
 mv * ../
 ~~~
 ## 最后的最后
-**不保证能够一直使用，毕竟Telegraph实在GFW名单中。且用且珍惜! **
+**不保证能够一直使用，毕竟Telegraph实在GFW名单中。且用且珍惜!**
