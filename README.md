@@ -23,6 +23,9 @@
 ![uPic配置1](https://telegraph.work/file/f9e9d47869a16477187ef.png)
 ![uPic配置2](https://telegraph.work/file/eab7ab4db54e7c871d404.png)
 
+上传成功页面：
+![uPic成功上传页面](https://telegraph.work/file/1c7b7567e72670755562b.png)
+
 **你所看到的图片来自uPic上传到Telegraph图床**
 
 ## 原理
