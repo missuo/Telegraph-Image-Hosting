@@ -6,7 +6,11 @@
 
 **优势：免费、无限流量、无限容量、无审查（懂得都懂哈）、理论上可以上传任意小于5MB的文件（不仅是图片格式）** 
 
-**缺陷：限制了单文件最多5MB左右**
+**缺陷：限制了单文件最多5MB左右。由于用的是Cloudflare的免费CDN服务，速度可能很一般**
+
+### 目前策略
+
+用户端 -> Cloudflare节点 -> xTom Osaka(我的VPS) -> Telegraph Servers(NL) 全程启用强制HTTPS
 
 ## 直接使用
 我已经搭建好了一个站点 [TelegraphImageHosting](https://telegraph.work)，您可以在网页端直接上传，但是一次只能上传一张小于5MB的照片。
@@ -141,4 +145,4 @@ cd Telegraph-Image-Hosting-main
 mv * ../
 ~~~
 ## 最后的最后
-**不保证能够一直使用，毕竟Telegraph实在GFW名单中。且用且珍惜!**
+**不保证能够一直使用，毕竟Telegraph在GFW名单中。且用且珍惜!**
