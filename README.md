@@ -34,26 +34,26 @@
 
 ## 原理
 有用过[Telegraph](https://telegra.ph)的朋友，应该都知道发布是不需要登录的，匿名发布即可，上传图片仅需点图片按钮。通过抓包分析发现向[Telegraph-API](https://telegra.ph/upload)发送POST请求，即可返回外链。
-~~~
+```
 请求头：
 Content-Type: multipart/form-data
 
 请求体：
 Key-Value: file
-~~~
+```
 
 成功返回的格式如下：
-~~~
+```
 [
     {
         "src": "/file/a672a2690e15c7d86435d.jpg"
     }
 ]
-~~~
+```
 我们找到了上传图片的API，以及图片的外链通用格式为 
-~~~
+```
 https://telegra.ph/file/a672a2690e15c7d86435d.jpg
-~~~
+```
 后面的字符串会在POST请求中返回给你
 
 ## 搭建过程
@@ -68,7 +68,7 @@ https://telegra.ph/file/a672a2690e15c7d86435d.jpg
 1. 将域名解析到你的VPS的IP，在VPS上安装Linux面板，例如宝塔，并且拥有Nginx和PHP。 
 2. 新建一个站点，开启HTTPS，如果你愿意可以使用CloudflareCDN，我的图床已经启用CF。
 3. 修改Nginx配置，反向代理upload和file即可。
-~~~
+```
 server
 {
     listen 80;
@@ -118,12 +118,12 @@ server
   
     client_max_body_size 5m;
 }
-~~~
+```
 4. 到此你已经完成了接口和图片外链的配置。可以配合图床上传工具使用了。
 5. 配置网页端的上传功能（我使用了PHP-CURL POST请求和前端AJAX提交）
 
 PHP核心代码：
-~~~
+```
 $ch = curl_init();
     $url = 'https://telegraph.work/upload';
     $post_data = array('file' => new \CURLFile(realpath($tmp_name)));
@@ -143,14 +143,14 @@ $ch = curl_init();
     $result
     = json_encode($result,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
     echo $result;
-~~~
+```
 6. 当然你也可以直接下载我的代码，在你的网站根目录下解压，即可使用。
-~~~
+```
 cd /www/wwwroot/image
 wget https://github.com/missuo/Telegraph-Image-Hosting/archive/main.zip
 unzip main.zip
 cd Telegraph-Image-Hosting-main
 mv * ../
-~~~
+```
 ## 最后的最后
 **不保证能够一直使用，毕竟Telegraph在GFW名单中。且用且珍惜!**
