@@ -50,7 +50,7 @@ Key-Value: file
     }
 ]
 ~~~
-我们找到了上传图片的API，以及图片的外链通过格式为 
+我们找到了上传图片的API，以及图片的外链通用格式为 
 ~~~
 https://telegra.ph/file/a672a2690e15c7d86435d.jpg
 ~~~
@@ -120,7 +120,8 @@ server
 }
 ~~~
 4. 到此你已经完成了接口和图片外链的配置。可以配合图床上传工具使用了。
-5. 配置网页端的上传功能（我使用了PHP Curl POST请求，AJAX提交From）
+5. 配置网页端的上传功能（我使用了PHP-CURL POST请求和前端AJAX提交）
+
 PHP核心代码：
 ~~~
 $ch = curl_init();
