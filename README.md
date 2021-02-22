@@ -43,7 +43,7 @@ Key-Value: file
 ```
 
 成功返回的格式如下：
-```
+```json
 [
     {
         "src": "/file/a672a2690e15c7d86435d.jpg"
@@ -68,7 +68,7 @@ https://telegra.ph/file/a672a2690e15c7d86435d.jpg
 1. 将域名解析到你的VPS的IP，在VPS上安装Linux面板，例如宝塔，并且拥有Nginx和PHP。 
 2. 新建一个站点，开启HTTPS，如果你愿意可以使用CloudflareCDN，我的图床已经启用CF。
 3. 修改Nginx配置，反向代理upload和file即可。
-```
+```nginx
 server
 {
     listen 80;
@@ -123,7 +123,7 @@ server
 5. 配置网页端的上传功能（我使用了PHP-CURL POST请求和前端AJAX提交）
 
 PHP核心代码：
-```
+```php
 $ch = curl_init();
     $url = 'https://telegraph.work/upload';
     $post_data = array('file' => new \CURLFile(realpath($tmp_name)));
@@ -145,7 +145,7 @@ $ch = curl_init();
     echo $result;
 ```
 6. 当然你也可以直接下载我的代码，在你的网站根目录下解压，即可使用。
-```
+```shell
 cd /www/wwwroot/image
 wget https://github.com/missuo/Telegraph-Image-Hosting/archive/main.zip
 unzip main.zip
