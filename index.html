@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Telegraph Image Hosting</title>
+        <meta name="description" content="Telegraph Image">
+        <meta name="keywords" content="Telegraph">
+        <link rel="shortcut icon" href="https://telegraph.work/file/88c3bbfdd222f759cc9b0.png">
+        <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <style>
+            #input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				z-index: -10;
+			}
+            .container{
+                display:table;
+                height:100%;
+            }
+            .row{
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .row-centered {
+                text-align:center;
+            }
+            .col-centered {
+                display:inline-block;
+                float:none;
+                text-align:center;
+            }
+            .alert{
+				font-size: 13px;
+			}
+            .upload-file{
+                  position: relative;
+                  width: 230px;
+                  left:0;
+                  right:0;
+                  margin:0 auto;
+                  padding: 10px 15px;
+                  border-radius: 5px;
+                  background-color: rgb(230,230,250);
+                  color: #333333;
+                  font-size: 14px;
+                  text-align: center;
+                  overflow: hidden;
+                  
+                }
+            
+            .upload-file span{ //单行显示
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+            }
+            
+            .upload-file:hover{ //简单的hover效果
+                  font-size: 15px;
+                  border-color: rgb(39, 226, 81);
+                }
+            
+            .upload-file input[type='file']{
+                  height: 100%;
+                  width: 100%;
+                  position: absolute; //设置为绝对定位，不会影响到其余元素
+                  top: 0;
+                  right: 0;
+                  opacity: 0;   //透明度为0
+                  filter: alpha(opacity=0);
+                  cursor: pointer;
+                }
+                img{
+                 width:auto;
+                 height:auto;
+                 max-width:100%;
+                 max-height:100%;
+                }
+
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <br>
+        <h4 style="text-align:center;font-size:20px;">Telegraph Image Hosting</h4>
+        <h4 style="text-align:center;font-size:10px;color:red;">Free & Unlimited Image Hosting</h4>
+        <h4 style="text-align:center;font-size:10px;color:#A569BD;">Start Uploading Your Image Now</h4>
+        <br>
+        <form role="form" action="##" onsubmit="return false" method="post" enctype="multipart/form-data" id="uploadForm">
+        <div class="upload-file">
+        <input type="file" class="input-file" name="file" accept="image/png, image/jpeg, image/jpg, image/gif">
+        <span class="tip">Choose Image</span>
+        </div>
+        <br><div class="Result"></div>
+        <textarea id="input"></textarea>
+        <button type="submit" name="submit" class="btn btn-primary btn-block" style="background: #4066ff;border:none;" onclick="submitdata()">Upload</button>
+        </form><br>
+        <p align="center">Thanks to <a href="https://telegra.ph" target="_Blank">Telegraph</a> & <a href="https://cloudflare.com" target="_Blank">Cloudflare</a></p>
+        <p align="center">2021 / Author: <a href="https://t.me/missuo" target="_Blank">Vincent</a> / Beta Version</p>
+        
+    </div>
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var fileInput = document.querySelector('.input-file');
+        var filelist = fileInput.files
+        file = filelist.item(0)
+        var tip = document.querySelector('.tip');
+        fileInput.addEventListener('change',function(e){ 
+            tip.textContent = 'Selected ' + this.files.length + ' Photo';
+            //tip.textContent = this.files[0].name;
+        })
+        function CopyUrl() {
+         var d = document.getElementById("imgurl");
+         d.select(); 
+         document.execCommand("Copy"); 
+         alert("Copy Successfully！");
+        }
+        function submitdata() {
+            $(".container .Result").css('display', 'block');
+			$(".container .Result").html(
+						    '<div class="alert alert-warning"><strong>Uploading</strong></div>');
+			$(".container .ewm").css('display', 'block');
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "api.php" ,
+                data: new FormData($('#uploadForm')[0]),
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (result) {
+                    console.log(result);
+                    if(result.code == 200){
+                        $(".container .Result").css('display', 'block');
+					    $(".container .Result").html(
+						'<div class="alert alert-info"><strong>Upload Successfully！</strong><br><br>The external link of the image is: <br><br><input type="text" value="'+ result.src +'" id="imgurl" size="53"><br><br><a href="'+ result.src + '" target="_Blank"><button type="button" class="btn btn-primary">Open in New Tab</button></a> &nbsp;<button onclick="CopyUrl()" class="btn btn-primary">Copy Url</button><br><br><img src = '+ result.src + '/></div>');
+					    $(".container .ewm").css('display', 'block');
+                    }else{
+						$(".container .Result").css('display', 'block');
+					$(".container .Result").html(
+						'<div class="alert alert-danger"><strong>Unknown Error</strong></div>');
+						$(".container .ewm").css('display', 'block');
+						setTimeout('closesctips()', 12000);
+							}
+					},
+                error : function() {
+                    $(".container .Result").css('display', 'block');
+					$(".container .Result").html(
+						'<div class="alert alert-danger"><strong>Server Error</strong></div>');
+					$(".container .ewm").css('display', 'block');
+					setTimeout('closesctips()', 12000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
