@@ -134,7 +134,11 @@ $ch = curl_init();
 ~~~
 6. 当然你也可以直接下载我的代码，在你的网站根目录下解压，即可使用。
 ~~~
-
+cd /www/wwwroot/image
+wget https://github.com/missuo/Telegraph-Image-Hosting/archive/main.zip
+unzip main.zip
+cd Telegraph-Image-Hosting-main
+mv * ../
 ~~~
 ## 最后的最后
 **不保证能够一直使用，毕竟Telegraph实在GFW名单中。且用且珍惜**
