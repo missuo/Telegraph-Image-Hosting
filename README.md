@@ -15,6 +15,8 @@
 ## 直接使用
 我已经搭建好了一个站点 [TelegraphImageHosting](https://telegraph.work)，您可以在网页端直接上传，但是一次只能上传一张小于5MB的照片。
 
+![网页端截图](https://telegraph.work/file/227bed8f2dfc891b9a4ce.png) 
+
 当然你也可以搭配图片上传的一些工具，更好的体验。这里推荐一下：[uPic](https://github.com/gee1k/uPic)
 
 在uPic作者 [Svend](https://github.com/gee1k/) 的帮助下，Telegraph图床已经可以完美在macOS和iOS上使用。
