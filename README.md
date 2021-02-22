@@ -13,7 +13,7 @@
 
 当然你也可以搭配图片上传的一些工具，更好的体验。这里推荐一下：[uPic](https://github.com/gee1k/uPic)
 
-在uPic作者 [Svend](https://github.com/gee1k/)的帮助下，Telegraph图床已经可以完美在macOS和iOS上使用。
+在uPic作者 [Svend](https://github.com/gee1k/) 的帮助下，Telegraph图床已经可以完美在macOS和iOS上使用。
 
 配置如图：
 ![uPic配置1](https://telegraph.work/file/f9e9d47869a16477187ef.png)
@@ -54,7 +54,7 @@ https://telegra.ph/file/a672a2690e15c7d86435d.jpg
 一台海外VPS
 
 ### 开始搭建
-1. 将域名解析到你的VPS的IP，在VPS上安装Liux面板，例如宝塔，并且拥有Nginx和PHP。 
+1. 将域名解析到你的VPS的IP，在VPS上安装Linux面板，例如宝塔，并且拥有Nginx和PHP。 
 2. 新建一个站点，开启HTTPS，如果你愿意可以使用CloudflareCDN，我的图床已经启用CF。
 3. 修改Nginx配置，反向代理upload和file即可。
 ~~~
