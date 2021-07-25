@@ -125,31 +125,30 @@ server
 PHP核心代码：
 ```php
 $ch = curl_init();
-    $url = 'https://telegraph.work/upload';
-    $post_data = array('file' => new \CURLFile(realpath($tmp_name)));
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1); //POST提交
-    curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-    $data =curl_exec($ch);
-    curl_close($ch);
-    $res= json_decode($data,TRUE);
-    $src = $res[0]['src'];
-    $result = array(
-        'code' => '200',
-        'status' => 'success',
-        'src' => 'https://telegraph.work'.$src
-        );
-    $result
-    = json_encode($result,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-    echo $result;
+$url = 'https://telegraph.work/upload';
+$post_data = array('file' => new \CURLFile(realpath($tmp_name)));
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_POST, 1); //POST提交
+curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
+$data =curl_exec($ch);
+curl_close($ch);
+$res= json_decode($data,TRUE);
+$src = $res[0]['src'];
+$result = array(
+'code' => '200',
+'status' => 'success',
+'src' => 'https://telegraph.work'.$src
+);
+$result
+= json_encode($result,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+echo $result;
 ```
 6. 当然你也可以直接下载我的代码，在你的网站根目录下解压，即可使用。
 ```shell
 cd /www/wwwroot/image
-wget https://github.com/missuo/Telegraph-Image-Hosting/archive/main.zip
-unzip main.zip
-cd Telegraph-Image-Hosting-main
+git clone https://github.com/missuo/Telegraph-Image-Hosting.git
+cd Telegraph-Image-Hosting
 mv * ../
 ```
 ## 最后的最后
