@@ -15,7 +15,7 @@
 ## 直接使用
 我已经搭建好了一个站点 [TelegraphImageHosting](https://telegraph.work)，您可以在网页端直接上传，但是一次只能上传一张小于5MB的照片。
 
-![网页端截图](https://telegraph.work/file/227bed8f2dfc891b9a4ce.png) 
+![网页端截图](https://telegraph.eowo.us/file/227bed8f2dfc891b9a4ce.png) 
 
 当然你也可以搭配图片上传的一些工具，更好的体验。这里推荐一下：[uPic](https://github.com/gee1k/uPic)
 
@@ -23,12 +23,12 @@
 
 配置如图：
 
-![uPic配置1](https://telegraph.work/file/f9e9d47869a16477187ef.png) 
-![uPic配置2](https://telegraph.work/file/eab7ab4db54e7c871d404.png) 
+![uPic配置1](https://telegraph.eowo.us/file/f9e9d47869a16477187ef.png) 
+![uPic配置2](https://telegraph.eowo.us/file/eab7ab4db54e7c871d404.png) 
 
 上传成功页面： 
 
-![uPic成功上传页面](https://telegraph.work/file/1c7b7567e72670755562b.png)
+![uPic成功上传页面](https://telegraph.eowo.us/file/1c7b7567e72670755562b.png)
 
 **你所看到的图片来自uPic上传到Telegraph图床**
 
