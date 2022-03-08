@@ -13,7 +13,7 @@
 用户端 -> Cloudflare节点 -> xTom Osaka(我的VPS) -> Telegraph Servers(NL) 全程启用强制HTTPS
 
 ## 直接使用
-我已经搭建好了一个站点 [TelegraphImageHosting](https://telegraph.work)，您可以在网页端直接上传，但是一次只能上传一张小于5MB的照片。
+我已经搭建好了一个站点 [TelegraphImageHosting](https://telegraph.eowo.us)，您可以在网页端直接上传，但是一次只能上传一张小于5MB的照片。
 
 ![网页端截图](https://telegraph.eowo.us/file/227bed8f2dfc891b9a4ce.png) 
 
