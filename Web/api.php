@@ -3,7 +3,7 @@
  * @Author: Vincent Young
  * @Date: 2022-10-05 05:18:48
  * @LastEditors: Vincent Young
- * @LastEditTime: 2022-10-05 05:58:34
+ * @LastEditTime: 2022-10-05 07:06:41
  * @FilePath: /Telegraph-Image-Hosting/Web/api.php
  * @Telegram: https://t.me/missuo
  * 
@@ -24,7 +24,7 @@ if(!is_uploaded_file($file['tmp_name'])){
 }
 
     $ch = curl_init();
-    $url = 'https://missuo.ru/upload';
+    $url = 'https://telegra.ph/upload';
     $post_data = array('file' => new \CURLFile(realpath($tmp_name)));
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
