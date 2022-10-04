@@ -3,26 +3,20 @@
  * @Author: Vincent Young
  * @Date: 2022-10-05 05:18:48
  * @LastEditors: Vincent Young
- * @LastEditTime: 2022-10-05 07:06:41
+ * @LastEditTime: 2022-10-05 07:08:37
  * @FilePath: /Telegraph-Image-Hosting/Web/api.php
  * @Telegram: https://t.me/missuo
  * 
  * Copyright © 2022 by Vincent, All Rights Reserved. 
  */
 header("Content-type:application/json;charset=utf-8");
-$file = $_FILES['file'];//得到传输的数据
-//print_r($file);
-//得到文件名称
+$file = $_FILES['file'];
 $name = $file['name'];
 $tmp_name = $file['tmp_name'];
-$type = strtolower(substr($name,strrpos($name,'.')+1)); //得到文件类型，并且都转化成小写
-
-//判断是否是通过HTTP POST上传的
+$type = strtolower(substr($name,strrpos($name,'.')+1)); 
 if(!is_uploaded_file($file['tmp_name'])){
-    //如果不是通过HTTP POST上传的
     return ;
 }
-
     $ch = curl_init();
     $url = 'https://telegra.ph/upload';
     $post_data = array('file' => new \CURLFile(realpath($tmp_name)));

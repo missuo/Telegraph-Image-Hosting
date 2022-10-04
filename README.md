@@ -2,7 +2,7 @@
  * @Author: Vincent Young
  * @Date: 2022-10-05 05:19:33
  * @LastEditors: Vincent Young
- * @LastEditTime: 2022-10-05 07:06:59
+ * @LastEditTime: 2022-10-05 07:08:44
  * @FilePath: /Telegraph-Image-Hosting/README.md
  * @Telegram: https://t.me/missuo
  * 
@@ -87,7 +87,7 @@ git clone https://github.com/missuo/Telegraph-Image-Hosting.git ./
 mv web/* ./
 ```
 
-4. Modify the line 40 to your domain in `api.php`
+4. Modify the line 34 to your domain in `api.php`
 
 5. Have fun.
 
