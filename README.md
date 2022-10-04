@@ -2,7 +2,7 @@
  * @Author: Vincent Young
  * @Date: 2022-10-05 05:19:33
  * @LastEditors: Vincent Young
- * @LastEditTime: 2022-10-05 07:08:44
+ * @LastEditTime: 2022-10-05 07:11:25
  * @FilePath: /Telegraph-Image-Hosting/README.md
  * @Telegram: https://t.me/missuo
  * 
@@ -70,7 +70,7 @@ client_max_body_size 5m;
 
 ![7516a06df832d1897922a](https://telegraph.eowo.us/file/7516a06df832d1897922a.png)
 
-## Deploy the Web Site
+## Deploy the Web Site (Optional)
 **Please excuse the fact that I can't write a front-end, so the front-end is very minimal. If you have written a nice front-end, please submit a `Pull Request` and I will appreciate it.**
 
 1. Connect your server by SSH, then enter your web directory.
