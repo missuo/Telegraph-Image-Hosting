@@ -1,4 +1,14 @@
 <?php
+/*
+ * @Author: Vincent Young
+ * @Date: 2022-10-05 05:18:48
+ * @LastEditors: Vincent Young
+ * @LastEditTime: 2022-10-05 05:58:34
+ * @FilePath: /Telegraph-Image-Hosting/Web/api.php
+ * @Telegram: https://t.me/missuo
+ * 
+ * Copyright © 2022 by Vincent, All Rights Reserved. 
+ */
 header("Content-type:application/json;charset=utf-8");
 $file = $_FILES['file'];//得到传输的数据
 //print_r($file);
@@ -14,7 +24,7 @@ if(!is_uploaded_file($file['tmp_name'])){
 }
 
     $ch = curl_init();
-    $url = 'https://telegraph.work/upload';
+    $url = 'https://missuo.ru/upload';
     $post_data = array('file' => new \CURLFile(realpath($tmp_name)));
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -25,9 +35,9 @@ if(!is_uploaded_file($file['tmp_name'])){
     $res= json_decode($data,TRUE);
     $src = $res[0]['src'];
     $result = array(
-        'code' => '200',
+        'code' => 200,
         'status' => 'success',
-        'src' => 'https://telegraph.work'.$src
+        'src' => 'https://missuo.ru'.$src
         );
     $result
     = json_encode($result,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
