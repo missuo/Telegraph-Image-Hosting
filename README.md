@@ -60,7 +60,7 @@ client_max_body_size 5m;
 
 
 ## With uPic for macOS/iOS
-**Thanks to my best friend [Svend](https://github.com/gee1k) (author of [uPic](https://https://github.com/gee1k/uPic)) for guiding the configuration scheme**
+**Thanks to my best friend [Svend](https://github.com/gee1k) (author of [uPic](https://github.com/gee1k/uPic)) for guiding the configuration scheme**
 
 1. You can change the `API URL` and `Domain` to your own.
 
