@@ -20,7 +20,7 @@ Build a free image hosting with [Telegraph](https://telegra.ph)
 - You can upload any file, not just image files
 
 ## Disadvantages
-- Single file cannot exceed 5GB
+- Single file cannot exceed 5MB
 - Access speed may not be ideal in China Mainland
 
 ## Current Strategy (Recommended)
