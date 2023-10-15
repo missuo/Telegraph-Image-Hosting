@@ -2,7 +2,7 @@
  * @Author: Vincent Young
  * @Date: 2022-10-05 05:19:33
  * @LastEditors: Vincent Young
- * @LastEditTime: 2023-10-14 23:02:30
+ * @LastEditTime: 2023-10-14 23:03:33
  * @FilePath: /Telegraph-Image-Hosting/README.md
  * @Telegram: https://t.me/missuo
  * 
@@ -77,7 +77,7 @@ cd /www/wwwroot/xxx.com
 ```shell
 wget https://raw.githubusercontent.com/missuo/Telegraph-Image-Hosting/main/index.html
 ```
-3. Modify the API `htt[s://missuo.ru/upload` to your domain.
+3. Modify the API `https://missuo.ru/upload` to your domain.
 
 4. Have fun.
 
