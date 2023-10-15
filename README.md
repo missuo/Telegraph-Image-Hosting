@@ -2,7 +2,7 @@
  * @Author: Vincent Young
  * @Date: 2022-10-05 05:19:33
  * @LastEditors: Vincent Young
- * @LastEditTime: 2023-10-14 23:03:33
+ * @LastEditTime: 2023-10-14 23:17:50
  * @FilePath: /Telegraph-Image-Hosting/README.md
  * @Telegram: https://t.me/missuo
  * 
@@ -29,7 +29,7 @@ Client -> Cloudflare Server (Optional) -> Your VPS (Example: Oracle Cloud) -> Te
 ## Demo Site
 [missuo.ru](https://missuo.ru)
 
-![bacd124a30fb599596f13](https://telegra.ph/file/bacd124a30fb599596f13.png)
+![bacd124a30fb599596f13](https://missuo.ru/file/bacd124a30fb599596f13.png)
 
 ## Deployment
 ### Preparation
@@ -62,11 +62,11 @@ client_max_body_size 5m;
 
 1. You can change the `API URL` and `Domain` to your own.
 
-![7e28f947345cba3709835](https://telegraph.eowo.us/file/7e28f947345cba3709835.png)
+![7e28f947345cba3709835](https://missuo.ru/file/7e28f947345cba3709835.png)
 
 2. Don't forget to click on the `Other fields` to add the header information.
 
-![7516a06df832d1897922a](https://telegraph.eowo.us/file/7516a06df832d1897922a.png)
+![7516a06df832d1897922a](https://missuo.ru/file/7516a06df832d1897922a.png)
 
 
 1. Connect your server by SSH, then enter your web directory.
@@ -82,7 +82,7 @@ wget https://raw.githubusercontent.com/missuo/Telegraph-Image-Hosting/main/index
 4. Have fun.
 
 ## Finally
-There is no guarantee that it will work all the time, after all, Telegraph is on the GFW list. Use it and cherish it!
+There is no guarantee that the Telegraph will work all the time, as it is on the GFW list. However, when you can use it, make sure to cherish it!
 
-## LICENSE
-[MIT License](https://raw.githubusercontent.com/missuo/Telegraph-Image-Hosting/main/LICENSE)
+## Author
+**Telegraph-Image-Hosting** © [Vincent Young](https://github.com/missuo), Released under the [MIT](./LICENSE) License.<br>
