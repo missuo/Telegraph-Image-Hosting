@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegraph Image Hosting</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            background-color: #007BFF;
+            color: #FFF;
+            border-radius: 5px;
+            padding: 10px 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .upload-btn-wrapper:hover {
+            background-color: #0056b3;
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Telegraph Image Hosting</h2>
+        <p class="text-center text-muted">Free & Unlimited Image Hosting</p>
+        <hr>
+
+        <div class="upload-btn-wrapper text-center">
+            <span>Upload an Image</span>
+            <input type="file" name="file" id="fileInput" accept="image/png, image/jpeg, image/jpg, image/gif">
+        </div>
+
+        <div id="uploadStatus" style="margin-top: 20px;"></div>
+
+        <hr>
+        <p class="text-center">Thanks to <a href="https://telegra.ph">Telegraph</a> & <a href="https://cloudflare.com">Cloudflare</a></p>
+        <p class="text-center">GitHub: <a href="https://github.com/missuo/Telegraph-Image-Hosting">Telegraph Image Hosting</a></p>
+        <p class="text-center">2021-2022 / Author: <a href="https://t.me/missuo">Vincent</a> / Beta Version</p>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const uploadStatus = document.getElementById('uploadStatus');
+
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];
+            if (file) {
+                uploadImage(file);
+            }
+        });
+
+        function uploadImage(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('https://missuo.ru/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const src = 'https://telegra.ph' + data[0].src;
+                uploadStatus.innerHTML = `
+                    <div class="alert alert-success">Upload successful!</div>
+                    <img src="${src}" class="img-fluid mb-3" alt="Uploaded Image">
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="imageUrl" value="${src}">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" onclick="copyImageUrl()">Copy URL</button>
+                      </div>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                uploadStatus.innerHTML = '<div class="alert alert-danger">Upload failed. Please try again.</div>';
+            });
+        }
+
+        function copyImageUrl() {
+            const imageUrl = document.getElementById('imageUrl');
+            imageUrl.select();
+            document.execCommand('copy');
+            alert('URL Copied to Clipboard!');
+        }
+    </script>
+</body>
+</html>

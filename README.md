@@ -2,7 +2,7 @@
  * @Author: Vincent Young
  * @Date: 2022-10-05 05:19:33
  * @LastEditors: Vincent Young
- * @LastEditTime: 2022-10-05 07:11:25
+ * @LastEditTime: 2023-10-14 23:02:30
  * @FilePath: /Telegraph-Image-Hosting/README.md
  * @Telegram: https://t.me/missuo
  * 
@@ -10,8 +10,6 @@
 -->
 # Telegraph-Image-Hosting
 Build a free image hosting with [Telegraph](https://telegra.ph)
-
-**[中文](https://github.com/missuo/Telegraph-Image-Hosting/blob/main/README-OLD.md) document is no longer maintained**
 
 ## Features
 - Free
@@ -31,7 +29,7 @@ Client -> Cloudflare Server (Optional) -> Your VPS (Example: Oracle Cloud) -> Te
 ## Demo Site
 [missuo.ru](https://missuo.ru)
 
-![0e8a64f1538a6727edfda](https://telegraph.eowo.us/file/0e8a64f1538a6727edfda.png)
+![bacd124a30fb599596f13](https://telegra.ph/file/bacd124a30fb599596f13.png)
 
 ## Deployment
 ### Preparation
@@ -70,26 +68,18 @@ client_max_body_size 5m;
 
 ![7516a06df832d1897922a](https://telegraph.eowo.us/file/7516a06df832d1897922a.png)
 
-## Deploy the Web Site (Optional)
-**Please excuse the fact that I can't write a front-end, so the front-end is very minimal. If you have written a nice front-end, please submit a `Pull Request` and I will appreciate it.**
 
 1. Connect your server by SSH, then enter your web directory.
 ```shell
 cd /www/wwwroot/xxx.com
 ```
-2. Download the source code on GitHub with `Git`.
+2. Download the source code on GitHub with `wget`.
 ```shell
-git clone https://github.com/missuo/Telegraph-Image-Hosting.git ./
+wget https://raw.githubusercontent.com/missuo/Telegraph-Image-Hosting/main/index.html
 ```
+3. Modify the API `htt[s://missuo.ru/upload` to your domain.
 
-3. Move all the files in `web` directory to web root directory.
-```shell
-mv web/* ./
-```
-
-4. Modify the line 34 to your domain in `api.php`
-
-5. Have fun.
+4. Have fun.
 
 ## Finally
 There is no guarantee that it will work all the time, after all, Telegraph is on the GFW list. Use it and cherish it!
