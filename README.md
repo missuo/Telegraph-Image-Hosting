@@ -11,6 +11,9 @@
 # Telegraph-Image-Hosting
 Build a free image hosting with [Telegraph](https://telegra.ph)
 
+> [!IMPORTANT]  
+> **This project is no longer maintained. Interested friends can deploy it on platforms like Cloudflare Workers or Vercel based on this idea.**
+
 ## Features
 - Free
 - Unlimited bandwidth (It will consume the traffic of your VPS)
