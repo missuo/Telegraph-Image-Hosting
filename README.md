@@ -12,7 +12,7 @@
 Build a free image hosting with [Telegraph](https://telegra.ph)
 
 > [!IMPORTANT]  
-> **This project is no longer maintained. Interested friends can deploy it on platforms like Cloudflare Workers or Vercel based on this idea.**
+> **Starting from September 6, 2024, Telegram officially discontinued the upload feature of Telegraph, rendering this project no longer functional.**
 
 ## Features
 - Free
