@@ -14,6 +14,11 @@ Build a free image hosting with [Telegraph](https://telegra.ph)
 > [!IMPORTANT]  
 > **Starting from September 6, 2024, Telegram officially discontinued the upload feature of Telegraph, rendering this project no longer functional.**
 
+## Alternatives
+- [https://github.com/missuo/discord-image](https://github.com/missuo/discord-image)
+
+**This project should be able to perfectly replace Telegraph.**
+
 ## Features
 - Free
 - Unlimited bandwidth (It will consume the traffic of your VPS)
